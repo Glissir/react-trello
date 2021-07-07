@@ -11,7 +11,7 @@ const REPLACE_TABLE = {
 
 const warn = (prop) => {
   const use = REPLACE_TABLE[prop]
-  console.warn(`react-trello property '${prop}' is removed. Use '${use}' instead. More - https://github.com/rcdexta/react-trello/blob/master/UPGRADE.md`)
+  console.warn(`kanban-board property '${prop}' is removed. Use '${use}' instead. More - https://github.com/rcdexta/kanban-board/blob/master/UPGRADE.md`)
 }
 
 export default (props) => {

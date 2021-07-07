@@ -4,8 +4,8 @@ import {withOptions} from '@storybook/addon-options'
 
 addDecorator(
   withOptions({
-    name: 'react-trello',
-    url: 'https://github.com/rcdexta/react-trello',
+    name: 'kanban-board',
+    url: 'https://github.com/rcdexta/kanban-board',
     goFullScreen: false,
     showStoriesPanel: true,
     showSearchBox: false,

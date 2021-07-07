@@ -2,21 +2,21 @@
 
 Pluggable components to add a Trello (like) kanban board to your application
 
-[![Build Status](https://travis-ci.org/rcdexta/react-trello.svg?branch=master)](https://travis-ci.org/rcdexta/react-trello)
-[![yarn version](https://badge.fury.io/js/react-trello.svg)](https://badge.fury.io/js/react-trello)
-[![bundlephobia.com](https://img.shields.io/bundlephobia/minzip/react-trello.svg)](https://bundlephobia.com/result?p=react-trello)
+[![Build Status](https://travis-ci.org/rcdexta/kanban-board.svg?branch=master)](https://travis-ci.org/rcdexta/kanban-board)
+[![yarn version](https://badge.fury.io/js/kanban-board.svg)](https://badge.fury.io/js/kanban-board)
+[![bundlephobia.com](https://img.shields.io/bundlephobia/minzip/kanban-board.svg)](https://bundlephobia.com/result?p=kanban-board)
 
 > This library is not affiliated, associated, authorized, endorsed by or in any way officially connected to Trello, Inc. `Trello` is a registered trademark of Atlassian, Inc.
 
 #### Basic Demo
-[![Edit react-trello-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/1o3zj95m9j)
+[![Edit kanban-board-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/1o3zj95m9j)
 
 #### Features Showcase
-[Storybook](https://rcdexta.github.io/react-trello/)
+[Storybook](https://rcdexta.github.io/kanban-board/)
 
 ## Features
 
-![alt tag](https://raw.githubusercontent.com/rcdexta/react-trello/master/react-trello.gif)
+![alt tag](https://raw.githubusercontent.com/rcdexta/kanban-board/master/kanban-board.gif)
 
 * Responsive and extensible
 * Easily pluggable into existing react application
@@ -32,13 +32,13 @@ Pluggable components to add a Trello (like) kanban board to your application
 Install using npm or yarn
 
 ```bash
-$ npm install --save react-trello
+$ npm install --save kanban-board
 ```
 
 or
 
 ```bash
-$ yarn add react-trello
+$ yarn add kanban-board
 ```
 
 
@@ -74,7 +74,7 @@ The data is passed to the board component and that's it.
 
 ```jsx
 import React from 'react'
-import Board from 'react-trello'
+import Board from 'kanban-board'
 
 export default class App extends React.Component {
   render() {
@@ -83,20 +83,20 @@ export default class App extends React.Component {
 }
 ```
 
-Refer to storybook for detailed examples: https://rcdexta.github.io/react-trello/
+Refer to storybook for detailed examples: https://rcdexta.github.io/kanban-board/
 
-Also refer to the sample project that uses react-trello as illustration: https://github.com/rcdexta/react-trello-example
+Also refer to the sample project that uses kanban-board as illustration: https://github.com/rcdexta/kanban-board-example
 
 ## Use edge version of project (current master branch)
 
 ```bash
-$ yarn add rcdexta/react-trello
+$ yarn add rcdexta/kanban-board
 ```
 
 and
 
 ```javascript
-import Board from 'react-trello/src'
+import Board from 'kanban-board/src'
 ```
 
 ## Upgrade
@@ -196,7 +196,7 @@ Refer to `stories` folder for examples on many more options for customization.
 
 It is possible to make the entire board editable by setting the `editable` prop to true. This switch prop will enable existing cards to be deleted and show a `Add Card` link at the bottom of each lane, clicking which will show an inline editable new card.
 
-Check out the [editable board story](https://rcdexta.github.io/react-trello/?selectedKind=Editable%20Board&selectedStory=Add%2FDelete%20Cards&full=0&down=0&left=1&panelRight=0) and its corresponding [source code](https://github.com/rcdexta/react-trello/blob/master/stories/EditableBoard.story.js) for more details.
+Check out the [editable board story](https://rcdexta.github.io/kanban-board/?selectedKind=Editable%20Board&selectedStory=Add%2FDelete%20Cards&full=0&down=0&left=1&panelRight=0) and its corresponding [source code](https://github.com/rcdexta/kanban-board/blob/master/stories/EditableBoard.story.js) for more details.
 
 ## Styling and customization
 
@@ -204,10 +204,10 @@ There are three ways to apply styles to the library components including `Board`
 
 ### 1. Predefined CSS classnames
 
-Use the predefined css classnames attached to these elements that go by `.react-trello-lane`, `.react-trello-card`, `.react-trello-board`:
+Use the predefined css classnames attached to these elements that go by `.kanban-board-lane`, `.kanban-board-card`, `.kanban-board-board`:
 
 ```css
-.react-trello-lane {
+.kanban-board-lane {
   border: 0;
   background-color: initial;
 }
@@ -304,13 +304,13 @@ const customTranslation = (key) => TRANSLATION_TABLE[key]
 // If your translation table has nested hashes (provided translations table is it)
 //
 // For example: { 'placeholder': { 'title': 'some text' } }
-import { createTranslate } from 'react-trello'
+import { createTranslate } from 'kanban-board'
 const customTranslation = createTranslate(TRANSLATION_TABLE)
 
 <Board t={customTranslation} .../>
 ```
 
-List of available keys - [locales/en/translation.json](https://github.com/rcdexta/react-trello/blob/master/locales/en/translation.json)
+List of available keys - [locales/en/translation.json](https://github.com/rcdexta/kanban-board/blob/master/locales/en/translation.json)
 
 
 ### react-i18next example
@@ -338,7 +338,7 @@ Pass environment variable `REDUX_LOGGING` as true to enable Redux logging in any
 ## Development
 
 ```
-cd react-trello/
+cd kanban-board/
 yarn install
 yarn run storybook
 ```

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixes
 
-* [#354] Getting errors on each drag and drop using react-trello/smooth-dnd
+* [#354] Getting errors on each drag and drop using kanban-board/smooth-dnd
 * [#317] Upgrade smooth-dnd to the latest version
 
 

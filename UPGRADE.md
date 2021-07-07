@@ -29,7 +29,7 @@ Use
 
 ```javascript
 
-import { createTranslate } from 'react-trello'
+import { createTranslate } from 'kanban-board'
 
 const TEXTS = {
   "Add another lane": "NEW LANE",

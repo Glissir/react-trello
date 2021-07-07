@@ -1,5 +1,5 @@
 {
-  "name": "react-trello",
+  "name": "kanban-board",
   "version": "2.4.1",
   "description": "Pluggable components to add a trello like kanban board to your application",
   "main": "dist/index.js",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rcdexta/react-trello"
+    "url": "https://github.com/Glissir/react-trello"
   },
   "keywords": [
     "react",
@@ -33,9 +33,9 @@
   "author": "RC, Prakash",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rcdexta/react-trello/issues"
+    "url": "https://github.com/Glissir/react-trello"
   },
-  "homepage": "https://github.com/rcdexta/react-trello",
+  "homepage": "https://github.com/Glissir/react-trelloß",
   "dependencies": {
     "autosize": "^4.0.2",
     "classnames": "^2.2.6",
