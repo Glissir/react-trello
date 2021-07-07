@@ -18,7 +18,7 @@ export default class Board extends Component {
   }
 
   getStore = () => {
-    //When you create multiple boards, unique stores are created for isolation
+    // When you create multiple boards, unique stores are created for isolation
     return createStore(boardReducer, applyMiddleware(...middlewares))
   }
 
@@ -29,12 +29,8 @@ export default class Board extends Component {
       <Provider store={this.store}>
         <>
           <components.GlobalStyle />
-          <BoardContainer
-            id={this.id}
-            {...this.props}
-            className={allClassNames}
-          />
-       </>
+          <BoardContainer id={this.id} {...this.props} className={allClassNames} />
+        </>
       </Provider>
     )
   }

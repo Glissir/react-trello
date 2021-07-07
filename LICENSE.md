@@ -1,5 +1,6 @@
 The MIT License (MIT)
 
+Copyright (c) 2021 Tyler Gasperlin
 Copyright (c) 2017 RC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
