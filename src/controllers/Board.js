@@ -7,6 +7,7 @@ import uuidv1 from 'uuid/v1'
 import BoardContainer from './BoardContainer'
 import createTranslate from 'rt/helpers/createTranslate'
 import boardReducer from 'rt/reducers/BoardReducer'
+import DefaultComponents from '../components/index'
 
 const middlewares = process.env.REDUX_LOGGING ? [logger] : []
 
@@ -15,6 +16,7 @@ export default class Board extends Component {
     super()
     this.store = this.getStore()
     this.id = id || uuidv1()
+    this.components = DefaultComponents
   }
 
   getStore = () => {
@@ -23,12 +25,12 @@ export default class Board extends Component {
   }
 
   render() {
-    const {id, className, components} = this.props
+    const {id, className} = this.props
     const allClassNames = classNames('kanban-board-board', className || '')
     return (
       <Provider store={this.store}>
         <>
-          <components.GlobalStyle />
+          <this.components.GlobalStyle />
           <BoardContainer id={this.id} {...this.props} className={allClassNames} />
         </>
       </Provider>
