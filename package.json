@@ -1,6 +1,6 @@
 {
   "name": "kanban-board",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "Pluggable components to add a trello like kanban board to your application",
   "main": "dist/index.js",
   "files": [
@@ -21,7 +21,6 @@
     "format": "pretty-quick \"src/**/*.js\"",
     "size": "size-limit",
     "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish && git push"
-
   },
   "repository": {
     "type": "git",
