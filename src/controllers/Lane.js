@@ -7,12 +7,17 @@ import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
 import pick from 'lodash/pick'
 import uuidv1 from 'uuid/v1'
-
+import Card from '../components/Card'
+import { ScrollableLane } from '../styles/Base'
 import Container from 'rt/dnd/Container'
 import Draggable from 'rt/dnd/Draggable'
-
+import NewCardForm from '../components/NewCardForm'
+import AddCardLink from '../components/AddCardLink'
+import LaneHeader from '../components/Lane/LaneHeader'
+import LaneFooter from '../components/Lane/LaneFooter'
 import * as laneActions from 'rt/actions/LaneActions'
-
+import Loader from '../components/Loader'
+import { Section } from '../styles/Base'
 class Lane extends Component {
   state = {
     loading: false,
@@ -166,7 +171,7 @@ class Lane extends Component {
     const cardList = this.sortCards(showableCards, laneSortFunction).map((card, idx) => {
       const onDeleteCard = () => this.removeCard(card.id)
       const cardToRender = (
-        <components.Card
+        <Card
           key={card.id}
           index={idx}
           style={card.style || cardStyle}
@@ -190,7 +195,7 @@ class Lane extends Component {
     })
 
     return (
-      <components.ScrollableLane ref={this.laneDidMount} isDraggingOver={isDraggingOver}>
+      <ScrollableLane ref={this.laneDidMount} isDraggingOver={isDraggingOver}>
         <Container
           orientation="vertical"
           groupName={this.groupName}
@@ -204,11 +209,11 @@ class Lane extends Component {
           getChildPayload={index => this.props.getCardDetails(id, index)}>
           {cardList}
         </Container>
-        {editable && !addCardMode && <components.AddCardLink onClick={this.showEditableCard} t={t} laneId={id} />}
+        {editable && !addCardMode && <AddCardLink onClick={this.showEditableCard} t={t} laneId={id} />}
         {addCardMode && (
-          <components.NewCardForm onCancel={this.hideEditableCard} t={t} laneId={id} onAdd={this.addNewCard} />
+          <NewCardForm onCancel={this.hideEditableCard} t={t} laneId={id} onAdd={this.addNewCard} />
         )}
-      </components.ScrollableLane>
+      </ScrollableLane>
     )
   }
 
@@ -226,7 +231,7 @@ class Lane extends Component {
   renderHeader = pickedProps => {
     const {components} = this.props
     return (
-      <components.LaneHeader
+      <LaneHeader
         {...pickedProps}
         onDelete={this.removeLane}
         onDoubleClick={this.toggleLaneCollapsed}
@@ -261,7 +266,7 @@ class Lane extends Component {
     const allClassNames = classNames('kanban-board-lane', this.props.className || '')
     const showFooter = collapsibleLanes && cards.length > 0
     return (
-      <components.Section
+      <Section
         {...otherProps}
         key={id}
         onClick={() => onLaneClick && onLaneClick(id)}
@@ -269,9 +274,9 @@ class Lane extends Component {
         className={allClassNames}>
         {this.renderHeader({id, cards, ...otherProps})}
         {this.renderDragContainer(isDraggingOver)}
-        {loading && <components.Loader />}
-        {showFooter && <components.LaneFooter onClick={this.toggleLaneCollapsed} collapsed={collapsed} />}
-      </components.Section>
+        {loading && <Loader />}
+        {showFooter && <LaneFooter onClick={this.toggleLaneCollapsed} collapsed={collapsed} />}
+      </Section>
     )
   }
 }

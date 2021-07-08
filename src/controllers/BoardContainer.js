@@ -8,6 +8,9 @@ import pick from 'lodash/pick'
 import isEqual from 'lodash/isEqual'
 import Lane from './Lane'
 import { PopoverWrapper } from 'react-popopo'
+import { BoardWrapper } from '../styles/Base'
+import { NewLaneSection } from '../components/NewLaneSection'
+import { NewLaneForm} from '../components/NewLaneForm'
 
 import * as boardActions from 'rt/actions/BoardActions'
 import * as laneActions from 'rt/actions/LaneActions'
@@ -168,7 +171,7 @@ class BoardContainer extends Component {
     ])
 
     return (
-      <components.BoardWrapper style={style} {...otherProps} draggable={false}>
+      <BoardWrapper style={style} {...otherProps} draggable={false}>
         <PopoverWrapper>
           <Container
             orientation="horizontal"
@@ -204,12 +207,12 @@ class BoardContainer extends Component {
         </PopoverWrapper>
         {canAddLanes && (
           <Container orientation="horizontal">
-            {editable && !addLaneMode ? <components.NewLaneSection t={t} onClick={this.showEditableLane} /> : (
-              addLaneMode && <components.NewLaneForm onCancel={this.hideEditableLane} onAdd={this.addNewLane} t={t}/>
+            {editable && !addLaneMode ? <NewLaneSection t={t} onClick={this.showEditableLane} /> : (
+              addLaneMode && <NewLaneForm onCancel={this.hideEditableLane} onAdd={this.addNewLane} t={t}/>
             )}
           </Container>
         )}
-      </components.BoardWrapper>
+      </BoardWrapper>
     )
   }
 }

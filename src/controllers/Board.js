@@ -8,6 +8,7 @@ import BoardContainer from './BoardContainer'
 import createTranslate from 'rt/helpers/createTranslate'
 import boardReducer from 'rt/reducers/BoardReducer'
 import DefaultComponents from '../components/index'
+import { GlobalStyle } from '../styles/Base'
 
 const middlewares = process.env.REDUX_LOGGING ? [logger] : []
 
@@ -30,7 +31,7 @@ export default class Board extends Component {
     return (
       <Provider store={this.store}>
         <>
-          <this.components.GlobalStyle />
+          <GlobalStyle />
           <BoardContainer id={this.id} {...this.props} className={allClassNames} />
         </>
       </Provider>
