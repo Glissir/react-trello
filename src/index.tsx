@@ -19,9 +19,9 @@ export {DefaultComponents as components}
 
 const DEFAULT_LANG = 'en'
 
-const Defaultboard = ({ lang = DEFAULT_LANG, ...otherProps}) => {
-  deprecationWarnings(otherProps)
-  return (<Board id='main-board' {...otherProps} />)
+const Defaultboard = ({ lang = DEFAULT_LANG}) => {
+  //deprecationWarnings(otherProps)
+  return (<Board id='main-board' />)
 }
 
 export default Defaultboard;
