@@ -19,7 +19,9 @@
     "commit": "git cz",
     "deploy-storybook": "storybook-to-ghpages",
     "format": "pretty-quick \"src/**/*.js\"",
-    "size": "size-limit"
+    "size": "size-limit",
+    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish && git push"
+
   },
   "repository": {
     "type": "git",
@@ -40,13 +42,13 @@
     "autosize": "^4.0.2",
     "classnames": "^2.2.6",
     "immutability-helper": "^2.8.1",
-    "lodash": "^4.17.11",
+    "lodash": ">= 4.17.11",
     "prop-types": "^15.7.2",
     "react-popopo": "^2.1.9",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
-    "redux-actions": "^2.6.1",
-    "redux-logger": "^3.0.6",
+    "react-redux": ">= 5.0.7",
+    "redux": ">= 4.0.0",
+    "redux-actions": ">= 2.6.1",
+    "redux-logger": ">= 3.0.6",
     "trello-smooth-dnd": "1.0.0",
     "uuid": "^3.3.2"
   },
